@@ -1,12 +1,10 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+# Password-Validator
+Java GUI app
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+### Motivation
+* This was my first tryst with GUIs in Java.
+* So it was a bit of a struggle but I enjoyed the experience.
+
+### Description
+* A simple password validator which validates passwords based on some simple rules
+* Your password should be atleast 8 characters long and contain atleast one Uppercase letter, one Lowercase letter, one Number and one Special Character
