@@ -3,7 +3,6 @@ Java GUI app
 
 ### Motivation
 * This was my first tryst with GUIs in Java.
-* So it was a bit of a struggle but I enjoyed the experience.
 
 ### Description
 * A simple password validator which validates passwords based on some simple rules

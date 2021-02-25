@@ -90,11 +90,11 @@ public class validator implements ActionListener
         }
         if(checkPassword(password) && flag == 1)
         {
-            success.setText("The password is strong");
+            success.setText("The password " + password + " is strong");
         }
         else
         {
-            success.setText("The password is not strong enough");
+            success.setText("The password " + password + " is not strong enough");
         }
     }
 }
