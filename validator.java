@@ -1,12 +1,13 @@
 /*
- * A simple password validator which validates passwords based on some simple rules.
- * Your password should be atleast 8 characters long and should contain atleast
- * one Uppercase letter, one Lowercase letter, one Number and one Special Character.
- * This was my first tryst with GUIs in Java.
- */
+A simple password validator which validates passwords based on some simple rules.
+Your password should be atleast 8 characters long and should contain atleast
+one Uppercase letter, one Lowercase letter, one Number and one Special Character.
+This was my first tryst with GUIs in Java.
+*/
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
 
 public class validator implements ActionListener
 {
@@ -46,17 +47,17 @@ public class validator implements ActionListener
         frame.setVisible(true);
     }
 
-    public boolean checkValidPassword(String password)
+    public boolean checkValidPassword(char[] password)
     {
         int u = 0, l = 0, d = 0, sp = 0;
         //This function returns different values based on what is missing in the parameter 'password'
-        if(password.length() < 8)
+        if(password.length < 8)
         {
             return false;
         }
-        for(int i = 0; i < password.length(); i++)
+        for(int i = 0; i < password.length; i++)
         {
-            char c = password.charAt(i);
+            char c = password[i];
             if(Character.isUpperCase(c))
             {
                 u = 1;
@@ -84,15 +85,17 @@ public class validator implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         String message = "";
-        String password = passwordText.getText();
+        char[] password = passwordText.getPassword(); //getPassword() method returns the typed password as a character array
         if(checkValidPassword(password))
         {
-            message = "The password " + password + " is strong enough and valid.";
+            message = "The password is strong enough and valid.";
         }
         else
         {
-            message = "The password " + password + " is not strong enough.";
+            message = "The password is not strong enough.";
         }
         info.setText(message);
+
+        Arrays.fill(password, '0'); // Zero out the password, for security
     }
 }
